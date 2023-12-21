@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Borrowing Cart</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .return-date {
+            font-style: italic;
+        }
+
+        .checkout-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Your Borrowing Cart</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Component</th>
+                <th>Quantity</th>
+                <th>Return Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Component 1 -->
+            <tr>
+                <td>Laptop</td>
+                <td>2</td>
+                <td class="return-date">2023-01-15</td>
+            </tr>
+            <!-- Component 2 -->
+            <tr>
+                <td>Projector</td>
+                <td>1</td>
+                <td class="return-date">2023-01-20</td>
+            </tr>
+            <!-- Add more components as needed -->
+        </tbody>
+    </table>
+
+    <a href="#" class="checkout-btn">Proceed to Checkout</a>
+
+</body>
+</html>
