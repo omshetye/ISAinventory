@@ -1,9 +1,10 @@
 from django.shortcuts import render
-
+from .models import *
 # Create your views here.
 def mainpage(request):
-  context={}
-  return render(request, 'home/home.html')
+  components = Component.objects.all()
+  context={'components':components}
+  return render(request, 'home/home.html',context)
 
 def cart(request):
   context={}
