@@ -1,3 +1,6 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,10 +44,11 @@
 <body>
 
     <h2>Your Borrowing Cart</h2>
-
+    <h4>Total Items:{{order.get_cart_items}}</h4>
     <table>
         <thead>
             <tr>
+                <th>Component Image</th>
                 <th>Component</th>
                 <th>Quantity</th>
                 <th>Return Date</th>
@@ -52,22 +56,35 @@
         </thead>
         <tbody>
             <!-- Component 1 -->
+            {% for item in items %}
             <tr>
-                <td>Laptop</td>
-                <td>2</td>
+                <td><img src="/static/images/{{item.component.image}}" alt="" style="width: 100px; height: 100px;"></td>
+                <td>{{item.component.name}}</td>
+                <td>
+                    <div style="flex:1">
+                        <p class="quantity">{{item.quantity}}</p>
+                        <div class="quantity">
+                            <img data-product="{{item.component.id}}" data-action="add" class="chg-quantity update-cart" src="{% static  'images/arrow-up.png' %}" style="width: 25px; height: 25px;">
+                    
+                            <img data-product="{{item.component.id}}" data-action="remove" class="chg-quantity update-cart" src="{% static  'images/arrow-down.png' %}" style="width: 25px; height: 25px;">
+                        </div>
+                    </div>
+                </td>
                 <td class="return-date">2023-01-15</td>
             </tr>
+            {% endfor %}
             <!-- Component 2 -->
-            <tr>
+            <!-- <tr>
                 <td>Projector</td>
                 <td>1</td>
                 <td class="return-date">2023-01-20</td>
-            </tr>
+            </tr> -->
             <!-- Add more components as needed -->
         </tbody>
     </table>
-
+<!-- <div><img src="/static/images/Untitled_design_1_UOrcPSt.png" alt="image not available"></div> -->
     <a href="#" class="checkout-btn">Proceed to Checkout</a>
 
 </body>
 </html>
+{% endblock content%}

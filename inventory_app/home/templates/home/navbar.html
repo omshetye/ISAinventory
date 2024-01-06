@@ -1,11 +1,14 @@
+{% load static %}
+{% block content %}
 <header>
   <nav>
       <ul>
-          <li><a href="home/">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="#">Categories</a></li>
-          <li><a href="home/cart">Cart</a></li>
           <li><a href="home/contact">Contact</a></li>
           <li><a href="home/profile">Profile</a></li>
       </ul>
+      <a href="{% url 'cart' %}">Cart {{cartItems}}</a>
   </nav>
 </header>
+{% endblock %}

@@ -1,1 +1,80 @@
-<h1>checkout</h1>
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Summary</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .return-date {
+            font-style: italic;
+        }
+
+        .checkout-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>checkout</h1>
+    <h2>Order Summary</h2>
+    <h4>Total Items:{{order.get_cart_items}}</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>Component Image</th>
+                <th>Component</th>
+                <th>Quantity</th>
+                <th>Return Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Component 1 -->
+            {% for item in items %}
+            <tr>
+                <td><img src="/static/images/{{item.component.image}}" alt="" style="width: 100px; height: 100px;"></td>
+                <td>{{item.component.name}}</td>
+                <td>{{item.quantity}}</td>
+                <td class="return-date">2023-01-15</td>
+            </tr>
+            {% endfor %}
+            
+        </tbody>
+    </table>
+
+    <a href="#" class="checkout-btn">Place Order</a>
+<script type="text/javascript" >
+
+    function submitData(){
+        
+    }
+</script>
+</body>
+</html>
+{% endblock content%}
