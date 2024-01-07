@@ -27,6 +27,7 @@ class Component(models.Model):
     
 class Order(models.Model):
     member = models.ForeignKey(Member,on_delete=models.SET_NULL,blank=True, null=True,related_name='member')
+    complete = models.BooleanField(default=False, null=True, blank=False)
     date_ordered = models.DateTimeField(auto_now_add=True)
     timeExpiry = models.DateTimeField(auto_now_add=True)
     def __str__(self):

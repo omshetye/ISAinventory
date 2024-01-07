@@ -68,11 +68,29 @@
         </tbody>
     </table>
 
-    <a href="#" class="checkout-btn">Place Order</a>
+    <a href="#" class="checkout-btn" id="place-order">Place Order</a>
 <script type="text/javascript" >
+    var components = '{{items}}'
+    var userData = {'total':'{{order.get_cart_items}}','components':components};
+    document.getElementById('place-order').addEventListener('click',function(e){
+    submitData()})
 
     function submitData(){
-        
+        var url = '/process_order/'
+        fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken' : csrftoken,
+        },
+        body: JSON.stringify({ 'form' :userData})
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Success:', data);
+            alert('Order Placed');
+            window.location.href="{% url 'home' %}"
+        })
     }
 </script>
 </body>

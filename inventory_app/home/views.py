@@ -6,7 +6,7 @@ from .models import *
 def mainpage(request):
   if request.user.is_authenticated:
     member = request.user.member
-    order, created = Order.objects.get_or_create(member=member)
+    order, created = Order.objects.get_or_create(member=member,complete=False)
     items = order.orderitem_set.all() 
     cartItems = order.get_cart_items
   else:
@@ -21,7 +21,7 @@ def mainpage(request):
 def cart(request): 
   if request.user.is_authenticated:
     member = request.user.member
-    order, created = Order.objects.get_or_create(member=member)
+    order, created = Order.objects.get_or_create(member=member,complete=False)
     items = order.orderitem_set.all()
     cartItems = order.get_cart_items 
   else:
@@ -36,7 +36,7 @@ def cart(request):
 def checkout(request):
   if request.user.is_authenticated:
     member = request.user.member
-    order, created = Order.objects.get_or_create(member=member)
+    order, created = Order.objects.get_or_create(member=member,complete=False)
     items = order.orderitem_set.all()
     cartItems = order.get_cart_items 
   else:
@@ -53,10 +53,10 @@ def updateItem(request):
   componentId = data['component_id']
   action = data['action'] 
   print('Action:', action)
-  print('Component:', componentId)
+  print('Component:', componentId," ",type(componentId))
   member = request.user.member
   component = Component.objects.get(id=componentId)
-  order, created = Order.objects.get_or_create(member=member)
+  order, created = Order.objects.get_or_create(member=member,complete=False)
   orderItem, created = OrderItem.objects.get_or_create(order=order, component=component)
   if action == 'add':
     orderItem.quantity = (orderItem.quantity + 1)
@@ -68,4 +68,24 @@ def updateItem(request):
   return JsonResponse ('Item was added', safe=False)
 
 def processOrder(request):
+  data = json.loads(request.body)
+  if request.user.is_authenticated:
+    member = request.user.member
+    order, created = Order.objects.get_or_create(member=member,complete=False)
+    total = data['form']['total']
+    #items = data['form']['components']
+    orderItems = OrderItem.objects.filter(order=order)
+    #print(orderItems)
+    if total == str(order.get_cart_items):
+      for item in orderItems:
+        componentId=item.component.id
+        print('Component:', item.component.id," ",type(item.component.id))
+        component = Component.objects.get(id=componentId)
+        component.stockQunatity = component.stockQunatity-item.quantity
+        component.save()
+      order.complete = True
+
+    order.save()
+  else:
+    print('user not logged in...')
   return JsonResponse ('order placed', safe=False)
