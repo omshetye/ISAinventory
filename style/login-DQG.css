@@ -1,0 +1,86 @@
+
+html {
+	font-size:62.5%;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+input {
+	border: none;
+}
+body {
+  width: 73.8rem;
+}.login-fHW {
+  box-sizing: border-box;
+  padding: 5.1rem 16.9rem 24.1rem 16.9rem;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border: dashed 0.1rem #9747ff;
+  border-radius: 0.5rem;
+}
+.login-fHW .property-1default-PjJ {
+  margin: 0rem 1.5rem 8.4rem 1.5rem;
+  width: calc(100% - 3rem);
+  height: 8rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.login-fHW .property-1default-PjJ .group-1000001784-iWg {
+  width: 100%;
+  height: 100%;
+  border-radius: 2.5rem;
+}
+.login-fHW .property-1default-PjJ .group-1000001784-iWg .group-1000001788-UVr {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 1.1725;
+  color: #ffffff;
+  font-family: Roboto, 'Source Sans Pro';
+  white-space: nowrap;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  box-shadow: inset -3.8667rem 3.8667rem 3.8667rem rgba(255, 255, 255, 0.1000000015)), inset 3.8667rem -3.8667rem 3.8667rem rgba(164, 164, 164, 0.1000000015));
+  backdrop-filter: blur(3.8667rem);
+  background-color: rgba(217, 217, 217, 0.200000003);
+  border-radius: 2.5rem;
+}
+.login-fHW .property-1variant2-ENY {
+  width: 100%;
+  height: 11rem;
+  flex-shrink: 0;
+}
+.login-fHW .property-1variant2-ENY .group-1000001784-PWL {
+  width: 100%;
+  height: 100%;
+  border-radius: 2.5rem;
+}
+.login-fHW .property-1variant2-ENY .group-1000001784-PWL .group-1000001788-MCG {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 1.1725;
+  color: #ffffff;
+  font-family: Roboto, 'Source Sans Pro';
+  white-space: nowrap;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  box-shadow: inset -3.8667rem 3.8667rem 3.8667rem rgba(255, 255, 255, 0.1000000015)), inset 3.8667rem -3.8667rem 3.8667rem rgba(164, 164, 164, 0.1000000015));
+  backdrop-filter: blur(3.8667rem);
+  background-color: rgba(217, 217, 217, 0.200000003);
+  border-radius: 2.5rem;
+}
