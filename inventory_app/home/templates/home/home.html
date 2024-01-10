@@ -17,6 +17,11 @@
 
 <section class="popular-categories">
     <h2>Popular Categories</h2>
+    <a href="{% url 'home' %}">All</a>
+    <a href="{% url 'getDevelopmentBoard' %}">Development Boards</a>
+    <a href="{% url 'getSM' %}">Sensor Modules</a>
+    <a href="{% url 'getEC' %}">Electronic Components</a>
+    <a href="{% url 'getMotor' %}">Motors</a>
 </section>
 <div class="row">
     {% for component in components %}
@@ -27,7 +32,7 @@
     <h3><strong>{{component.name}}</strong></h3>
     <button data-product="{{component.id}}" data-action="add" class="btn
     btn-outline-secondary add-btn update-cart">Add to Cart</button>
-    <a class="btn btn-outline-success" href="#">View</a>
+    <a href="/component/{{component.id}}">View</a>
     <hr>
     </div>
     </div>

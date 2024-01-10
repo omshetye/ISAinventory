@@ -1,0 +1,19 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="/static/images/{{component.image}}" alt="" style="width: 100px; height: 100px;">
+    <h2>{{component.name}}</h2>
+    <h4>Description : {{component.description}}</h4>
+    <button data-product="{{component.id}}" data-action="add" class="btn
+    btn-outline-secondary add-btn update-cart">Add to Cart</button>
+</body>
+</html>
+{% endblock content %}

@@ -18,6 +18,76 @@ def mainpage(request):
   context={'components':components, 'cartItems':cartItems}
   return render(request, 'home/home.html',context)
 
+def getComponent(request,cid):
+  if request.user.is_authenticated:
+    member = request.user.member
+    order, created = Order.objects.get_or_create(member=member,complete=False)
+    items = order.orderitem_set.all() 
+    cartItems = order.get_cart_items
+  else:
+    items = []
+    order = {'get_cart_items':0}
+    cartItems = order['get_cart_items']
+  component = Component.objects.get(id=cid)
+  context={'component':component, 'cartItems':cartItems}
+  return render(request, 'home/componentDetail.html',context)
+
+def getDevelopmentBoard(request):
+  if request.user.is_authenticated:
+    member = request.user.member
+    order, created = Order.objects.get_or_create(member=member,complete=False)
+    items = order.orderitem_set.all() 
+    cartItems = order.get_cart_items
+  else:
+    items = []
+    order = {'get_cart_items':0}
+    cartItems = order['get_cart_items']
+  component = Component.objects.filter(category='Development Boards')
+  context={'components':component, 'cartItems':cartItems}
+  return render(request, 'home/home.html',context)
+
+def getSM(request):
+  if request.user.is_authenticated:
+    member = request.user.member
+    order, created = Order.objects.get_or_create(member=member,complete=False)
+    items = order.orderitem_set.all() 
+    cartItems = order.get_cart_items
+  else:
+    items = []
+    order = {'get_cart_items':0}
+    cartItems = order['get_cart_items']
+  component = Component.objects.filter(category='Sensors')
+  context={'components':component, 'cartItems':cartItems}
+  return render(request, 'home/home.html',context)
+
+def getMotor(request):
+  if request.user.is_authenticated:
+    member = request.user.member
+    order, created = Order.objects.get_or_create(member=member,complete=False)
+    items = order.orderitem_set.all() 
+    cartItems = order.get_cart_items
+  else:
+    items = []
+    order = {'get_cart_items':0}
+    cartItems = order['get_cart_items']
+  component = Component.objects.filter(category='Motors')
+  context={'components':component, 'cartItems':cartItems}
+  return render(request, 'home/home.html',context)
+
+def getEC(request):
+  if request.user.is_authenticated:
+    member = request.user.member
+    order, created = Order.objects.get_or_create(member=member,complete=False)
+    items = order.orderitem_set.all() 
+    cartItems = order.get_cart_items
+  else:
+    items = []
+    order = {'get_cart_items':0}
+    cartItems = order['get_cart_items']
+  component = Component.objects.filter(category='Electronic Component')
+  context={'components':component, 'cartItems':cartItems}
+  return render(request, 'home/home.html',context)
+
 def cart(request): 
   if request.user.is_authenticated:
     member = request.user.member

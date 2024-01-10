@@ -1,4 +1,6 @@
-var updateBtns = document.getElementsByClassName('update-cart')
+var updateBtns = document.getElementsByClassName('update-cart');
+//var viewBtns = document.getElementsByClassName('view-component');
+
 
 for(var i = 0; i < updateBtns.length; i++){
     updateBtns[i].addEventListener('click', function(){
@@ -9,8 +11,17 @@ for(var i = 0; i < updateBtns.length; i++){
         if(user === 'AnonymousUser'){
             console.log('Not logged in')
         }else{
-            updateUserOrder(componentId, action)
+            updateUserOrder(componentId, action);
     }})
+
+//     viewBtns[i].dataset.product1 = updateBtns[i].dataset.product;
+    
+//     viewBtns[i].addEventListener('click', function(){
+//         var componentId = this.dataset.product1;
+//         console.log('componentId: ', componentId);
+//         console.log('USER:', user);
+//         viewCmpt(componentId);
+// })
 }
 
 function updateUserOrder (componentId, action) {
@@ -31,4 +42,10 @@ function updateUserOrder (componentId, action) {
         console.log('data:', data)
         location.reload()
     })
+}
+
+
+
+function viewCmpt(componentId){
+    console.log("view button clicked....", componentId);
 }
