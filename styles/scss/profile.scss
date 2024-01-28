@@ -1,0 +1,45 @@
+
+html {
+	font-size:62.5%;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+input {
+	border: none;
+}
+body {
+  width: 6.6rem;
+}.profile-XdE {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  border: dashed 0.1rem #9747ff;
+  box-sizing: border-box;
+  padding: 2rem;
+  border-radius: 0.5rem;
+
+  .property-1default-5Pr {
+    height: 2.6rem;
+    cursor: pointer;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+    margin-bottom: 2rem;
+    width: 2.6rem;
+  }
+  .property-1variant2-1HW {
+    height: 2.6rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+    width: 2.6rem;
+  }
+}

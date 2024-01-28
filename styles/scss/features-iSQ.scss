@@ -1,0 +1,52 @@
+
+html {
+	font-size:62.5%;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+input {
+	border: none;
+}
+body {
+  width: 11.9rem;
+}.features-4w6 {
+  box-sizing: border-box;
+  position: relative;
+  align-items: center;
+  display: flex;
+  border: dashed 0.1rem #9747ff;
+  padding: 1.5rem 1rem 2.5rem 1.4rem;
+  width: 100%;
+  overflow: hidden;
+  flex-direction: column;
+  border-radius: 0.5rem;
+
+  .property-1default-cBv {
+    cursor: pointer;
+    line-height: 1.1725;
+    font-family: Roboto, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin: 0rem 1.8rem 1.5rem 1.5rem;
+    width: calc(100% - 3.3rem);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #1e1e1e;
+  }
+  .property-1variant2-JaY {
+    font-size: 2.4rem;
+    line-height: 1.1725;
+    color: #1e1e1e;
+    height: 2.4rem;
+    font-weight: 400;
+    font-family: Roboto, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+    width: 100%;
+  }
+}

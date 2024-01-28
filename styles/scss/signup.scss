@@ -1,0 +1,91 @@
+
+html {
+	font-size:62.5%;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+input {
+	border: none;
+}
+body {
+  width: 73.8rem;
+}.signup-gfn {
+  width: 100%;
+  position: relative;
+  display: flex;
+  border: dashed 0.1rem #9747ff;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  padding: 5.1rem 16.9rem 24.1rem 16.9rem;
+  overflow: hidden;
+  align-items: center;
+  flex-direction: column;
+
+  .property-1default-pGC {
+    width: calc(100% - 3rem);
+    height: 8rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin: 0rem 1.5rem 8.4rem 1.5rem;
+
+    .group-1000001784-M1E {
+      width: 100%;
+      height: 100%;
+      border-radius: 2.5rem;
+
+      .group-1000001788-i6g {
+        font-size: 3.2rem;
+        box-sizing: border-box;
+        color: #ffffff;
+        white-space: nowrap;
+        justify-content: center;
+        box-shadow: inset -3.8667rem 3.8667rem 3.8667rem rgba(255, 255, 255, 0.1000000015)), inset 3.8667rem -3.8667rem 3.8667rem rgba(164, 164, 164, 0.1000000015));
+        background-color: rgba(217, 217, 217, 0.200000003);
+        width: 100%;
+        display: flex;
+        font-weight: 400;
+        border-radius: 2.5rem;
+        backdrop-filter: blur(3.8667rem);
+        height: 100%;
+        line-height: 1.1725;
+        font-family: Roboto, 'Source Sans Pro';
+        align-items: center;
+      }
+    }
+  }
+  .property-1variant2-8AQ {
+    width: 100%;
+    height: 11rem;
+    flex-shrink: 0;
+
+    .group-1000001784-t9a {
+      width: 100%;
+      height: 100%;
+      border-radius: 2.5rem;
+
+      .group-1000001788-3oA {
+        font-family: Roboto, 'Source Sans Pro';
+        align-items: center;
+        box-shadow: inset -3.8667rem 3.8667rem 3.8667rem rgba(255, 255, 255, 0.1000000015)), inset 3.8667rem -3.8667rem 3.8667rem rgba(164, 164, 164, 0.1000000015));
+        border-radius: 2.5rem;
+        height: 100%;
+        justify-content: center;
+        width: 100%;
+        background-color: rgba(217, 217, 217, 0.200000003);
+        color: #ffffff;
+        white-space: nowrap;
+        box-sizing: border-box;
+        backdrop-filter: blur(3.8667rem);
+        display: flex;
+        font-size: 4rem;
+        font-weight: 400;
+        line-height: 1.1725;
+      }
+    }
+  }
+}

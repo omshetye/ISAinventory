@@ -1,0 +1,91 @@
+
+html {
+	font-size:62.5%;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+input {
+	border: none;
+}
+body {
+  width: 73.8rem;
+}.login-fHW {
+  padding: 5.1rem 16.9rem 24.1rem 16.9rem;
+  width: 100%;
+  position: relative;
+  flex-direction: column;
+  border: dashed 0.1rem #9747ff;
+  box-sizing: border-box;
+  overflow: hidden;
+  align-items: center;
+  display: flex;
+  border-radius: 0.5rem;
+
+  .property-1default-PjJ {
+    margin: 0rem 1.5rem 8.4rem 1.5rem;
+    width: calc(100% - 3rem);
+    height: 8rem;
+    cursor: pointer;
+    flex-shrink: 0;
+
+    .group-1000001784-iWg {
+      width: 100%;
+      height: 100%;
+      border-radius: 2.5rem;
+
+      .group-1000001788-UVr {
+        font-size: 3.2rem;
+        font-family: Roboto, 'Source Sans Pro';
+        height: 100%;
+        white-space: nowrap;
+        line-height: 1.1725;
+        color: #ffffff;
+        backdrop-filter: blur(3.8667rem);
+        border-radius: 2.5rem;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        box-shadow: inset -3.8667rem 3.8667rem 3.8667rem rgba(255, 255, 255, 0.1000000015)), inset 3.8667rem -3.8667rem 3.8667rem rgba(164, 164, 164, 0.1000000015));
+        background-color: rgba(217, 217, 217, 0.200000003);
+        width: 100%;
+      }
+    }
+  }
+  .property-1variant2-ENY {
+    width: 100%;
+    height: 11rem;
+    flex-shrink: 0;
+
+    .group-1000001784-PWL {
+      border-radius: 2.5rem;
+      width: 100%;
+      height: 100%;
+
+      .group-1000001788-MCG {
+        font-family: Roboto, 'Source Sans Pro';
+        align-items: center;
+        backdrop-filter: blur(3.8667rem);
+        border-radius: 2.5rem;
+        width: 100%;
+        background-color: rgba(217, 217, 217, 0.200000003);
+        height: 100%;
+        line-height: 1.1725;
+        white-space: nowrap;
+        box-sizing: border-box;
+        display: flex;
+        font-size: 4rem;
+        font-weight: 400;
+        color: #ffffff;
+        justify-content: center;
+        box-shadow: inset -3.8667rem 3.8667rem 3.8667rem rgba(255, 255, 255, 0.1000000015)), inset 3.8667rem -3.8667rem 3.8667rem rgba(164, 164, 164, 0.1000000015));
+      }
+    }
+  }
+}

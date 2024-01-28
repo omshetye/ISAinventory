@@ -1,0 +1,63 @@
+
+html {
+	font-size:62.5%;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+input {
+	border: none;
+}
+body {
+  width: 22rem;
+}.about-foA {
+  position: relative;
+  display: flex;
+  border: dashed 0.1rem #9747ff;
+  box-sizing: border-box;
+  padding: 2rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+
+  .property-1default-27v {
+    margin-bottom: 2rem;
+    font-family: Roboto, 'Source Sans Pro';
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 400;
+    align-items: center;
+    height: 4.4rem;
+    font-size: 1.6rem;
+    color: #1e1e1e;
+    white-space: nowrap;
+    flex-shrink: 0;
+    width: 100%;
+    line-height: 1.1725;
+    display: flex;
+  }
+  .property-1variant2-hzk {
+    color: #1e1e1e;
+    justify-content: center;
+    border: solid 0.1rem #fdf9f9;
+    flex-shrink: 0;
+    font-size: 1.6rem;
+    white-space: nowrap;
+    font-weight: 400;
+    align-items: center;
+    line-height: 1.1725;
+    height: 4.4rem;
+    font-family: Roboto, 'Source Sans Pro';
+    display: flex;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    background-color: #070034;
+    width: 100%;
+  }
+}

@@ -1,0 +1,58 @@
+
+html {
+	font-size:62.5%;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+input {
+	border: none;
+}
+body {
+  width: 11.9rem;
+}.home-dmE {
+  position: relative;
+  align-items: center;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  padding: 1.5rem 1rem 2.5rem 1.4rem;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: dashed 0.1rem #9747ff;
+
+  .property-1default-aRa {
+    height: 1.9rem;
+    width: calc(100% - 3.3rem);
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #1e1e1e;
+    font-family: Roboto, 'Source Sans Pro';
+    display: flex;
+    align-items: center;
+    margin: 0rem 1.8rem 1.5rem 1.5rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+    justify-content: center;
+    line-height: 1.1725;
+  }
+  .property-1variant2-Fnc {
+    color: #1e1e1e;
+    flex-shrink: 0;
+    padding: 0rem 1.4rem 0rem 1.6rem;
+    width: 100%;
+    line-height: 1.1725;
+    font-weight: 400;
+    font-family: Roboto, 'Source Sans Pro';
+    white-space: nowrap;
+    box-sizing: border-box;
+    height: 2.4rem;
+    font-size: 2.4rem;
+  }
+}
