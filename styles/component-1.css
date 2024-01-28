@@ -1,0 +1,110 @@
+
+html {
+	font-size:62.5%;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+input {
+	border: none;
+}
+body {
+  width: 35.9rem;
+}.component-1-Bit {
+  box-sizing: border-box;
+  padding: 2rem;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  row-gap: 2rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border: dashed 0.1rem #9747ff;
+  border-radius: 0.5rem;
+}
+.component-1-Bit .property-1default-vAg {
+  box-sizing: border-box;
+  padding: 0.4rem 0.8rem 0.3rem 0.8rem;
+  width: 100%;
+  cursor: pointer;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.2125;
+  color: #07053f;
+  font-family: Inter, 'Source Sans Pro';
+  white-space: nowrap;
+  background-color: #d9d9d9;
+  flex-shrink: 0;
+}
+.component-1-Bit .property-1variant2-zwE {
+  width: 100%;
+  height: 3.7rem;
+  cursor: pointer;
+  position: relative;
+  background-color: #d9d9d9;
+  flex-shrink: 0;
+}
+.component-1-Bit .property-1variant2-zwE .item--Yxk {
+  width: 0.6rem;
+  height: 2rem;
+  position: absolute;
+  left: 0.8rem;
+  top: 1rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.2125;
+  color: #000000;
+  font-family: Inter, 'Source Sans Pro';
+  white-space: nowrap;
+}
+.component-1-Bit .property-1variant2-zwE .email-qwr {
+  width: 6.3rem;
+  height: 2.5rem;
+  position: absolute;
+  left: 0.8rem;
+  top: -1.4rem;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2125;
+  color: #07053f;
+  font-family: Inter, 'Source Sans Pro';
+  white-space: nowrap;
+}
+.component-1-Bit .property-1variant3-kJ8 {
+  width: 100%;
+  height: 3.7rem;
+  cursor: pointer;
+  position: relative;
+  background-color: #d9d9d9;
+  flex-shrink: 0;
+}
+.component-1-Bit .property-1variant3-kJ8 .item--tfE {
+  width: 0.6rem;
+  height: 2rem;
+  position: absolute;
+  left: 0.8rem;
+  top: 1rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.2125;
+  font-family: Inter, 'Source Sans Pro';
+  white-space: nowrap;
+}
+.component-1-Bit .property-1variant3-kJ8 .email-QtU {
+  width: 6.3rem;
+  height: 2.5rem;
+  position: absolute;
+  left: 0.8rem;
+  top: -1.4rem;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2125;
+  color: #021436;
+  font-family: Inter, 'Source Sans Pro';
+  white-space: nowrap;
+}
