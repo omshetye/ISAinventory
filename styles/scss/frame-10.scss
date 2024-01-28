@@ -1,0 +1,130 @@
+
+html {
+	font-size:62.5%;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+input {
+	border: none;
+}
+body {
+  width: 49.1rem;
+}.frame-10-bDN {
+  background-color: #ffffff;
+  box-sizing: border-box;
+  padding: 1.9rem 1.6rem 5.9rem 2.6rem;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  .payment-summary-VJk {
+    color: #12558c;
+    font-family: Roboto, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin: 0rem 10.9rem 0.6rem 0rem;
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: 1.1725;
+  }
+  .rectangle-3852-uNU {
+    width: 100%;
+    height: 0.1rem;
+    background-color: #857d7d;
+    flex-shrink: 0;
+    margin-bottom: 5.9rem;
+  }
+  .auto-group-ey9n-eL4 {
+    margin-right: 0.9rem;
+    width: 44rem;
+    height: 48.1rem;
+    position: relative;
+    flex-shrink: 0;
+
+    .total-amount-5728-total-gst-total-discount-shipping--ajW {
+      left: 0;
+      top: 0;
+      line-height: 1.1725;
+      position: absolute;
+      height: 36.6rem;
+      font-size: 2.6rem;
+      font-weight: 300;
+      color: #12558c;
+      font-family: Roboto, 'Source Sans Pro';
+      width: 42.6rem;
+    }
+    .grand-total--5gG {
+      height: 3.2rem;
+      position: absolute;
+      top: 24.1rem;
+      font-size: 2.7rem;
+      line-height: 1.1725;
+      white-space: nowrap;
+      width: 18.4rem;
+      font-weight: 400;
+      color: #12558c;
+      font-family: Roboto, 'Source Sans Pro';
+      left: 0;
+    }
+    .group-3-a7E {
+      flex-direction: column;
+      width: 43.6rem;
+      height: 12.8rem;
+      position: absolute;
+      left: 0.4rem;
+      top: 35.3rem;
+      align-items: center;
+      display: flex;
+
+      .auto-group-nopj-uvC {
+        white-space: nowrap;
+        border-radius: 1.5rem;
+        margin-bottom: 2.4rem;
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 2.4rem;
+        font-weight: 400;
+        font-family: Roboto, 'Source Sans Pro';
+        padding: 1rem 1.4rem 1.3rem 1.4rem;
+        line-height: 1.1725;
+        color: #ffffff;
+        background-color: #ffa835;
+        flex-shrink: 0;
+      }
+      .auto-group-3znu-nDJ {
+        align-items: center;
+        background-color: rgba(253, 30, 30, 0.7799999714);
+        border-radius: 1.5rem;
+        flex-shrink: 0;
+        box-sizing: border-box;
+        padding: 1.4rem 6.2rem 0.7rem 3.6rem;
+        width: 100%;
+        display: flex;
+
+        .icon-park-outline-check-correct-7mN {
+          flex-shrink: 0;
+          margin: 0rem 1.9rem 0.1rem 0rem;
+          width: 2.4rem;
+          height: 2.4rem;
+          object-fit: contain;
+          vertical-align: top;
+        }
+        .proceed-to-checkout-2tL {
+          color: #ffffff;
+          font-family: Roboto, 'Source Sans Pro';
+          white-space: nowrap;
+          flex-shrink: 0;
+          font-size: 2.6rem;
+          font-weight: 500;
+          line-height: 1.1725;
+        }
+      }
+    }
+  }
+}
