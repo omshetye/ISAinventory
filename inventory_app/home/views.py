@@ -146,16 +146,24 @@ def processOrder(request):
     #items = data['form']['components']
     orderItems = OrderItem.objects.filter(order=order)
     #print(orderItems)
+    receipt = f"UserName: {member.name} \n Email: {member.email} \n Total Order Items: {total} \n OrderItems:\n"
     if total == str(order.get_cart_items):
       for item in orderItems:
         componentId=item.component.id
         print('Component:', item.component.id," ",type(item.component.id))
         component = Component.objects.get(id=componentId)
+        receipt = receipt + f"{component.name}={item.quantity}\n"
         component.stockQunatity = component.stockQunatity-item.quantity
         component.save()
       order.complete = True
 
+    receipt = receipt + f"Order Id = {order.id}"
+    create_text_file(receipt)
     order.save()
   else:
     print('user not logged in...')
   return JsonResponse ('order placed', safe=False)
+
+def create_text_file(content, output_path='output.txt'):
+    with open(output_path, 'w') as file:
+        file.write(content)

@@ -30,8 +30,12 @@
     <img class="thumbnail" src="/static/images/{{component.image}}" style="width: 100px; height: 100px;">
     <div class="box-element product">
     <h3><strong>{{component.name}}</strong></h3>
+    {% if component.stockQunatity > 0 %}
     <button data-product="{{component.id}}" data-action="add" class="btn
     btn-outline-secondary add-btn update-cart">Add to Cart</button>
+    {% else %}
+    <p style="color: crimson;">Out of Stock</p>
+    {% endif %}
     <a href="/component/{{component.id}}">View</a>
     <hr>
     </div>
