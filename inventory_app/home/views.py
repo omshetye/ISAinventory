@@ -1,7 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
 import json
 from .models import *
+from django import forms
+from .forms import ContactForm
+
 # Create your views here.
 def mainpage(request):
   if request.user.is_authenticated:
@@ -89,3 +92,17 @@ def processOrder(request):
   else:
     print('user not logged in...')
   return JsonResponse ('order placed', safe=False)
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('success')  # Create a success page or redirect to home
+    else:
+        form = ContactForm()
+
+    return render(request, 'home/contact.html', {'form': form})
+
+def success(request):
+    return render(request, 'home/success.html')
