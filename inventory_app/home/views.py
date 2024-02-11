@@ -1,7 +1,11 @@
-from django.shortcuts import render
-from django.http import JsonResponse
+from django.shortcuts import render, redirect
+from django.http import HttpResponse, JsonResponse
 import json
 from .models import *
+from django.contrib.auth import authenticate, login, logout
+from .backends import OTPBackend
+from django.core.mail import send_mail
+from django.conf import settings
 # Create your views here.
 def mainpage(request):
   if request.user.is_authenticated:
@@ -167,3 +171,56 @@ def processOrder(request):
 def create_text_file(content, output_path='output.txt'):
     with open(output_path, 'w') as file:
         file.write(content)
+
+def signin(request):
+  err = None
+  if request.method=='POST':
+      email = request.POST["email"]
+      print(email)
+      try:
+          member = Member.objects.get(email=email)
+          otp = member.generate_otp()
+          send_mail(
+            'OTP verifcation',
+            f'{otp} is your OTP verification code.',
+            settings.EMAIL_HOST_USER,
+            [email],
+            fail_silently=False
+          )
+          request.session['email'] = email
+          member.save()
+      except Member.DoesNotExist:
+          return HttpResponse("User with provided email does not exist!")
+      return redirect("verify")
+  #     user = OTPBackend.authenticate(request, email=email,otp=otp)
+  #     if user is not None:
+  #         login(request,user)
+  #         return redirect("home")
+  #     else:
+  #         err = "Invalid Credentials"
+  context = {"err":err}
+  return render(request,"home/signin.html",context)
+
+def verify(request):
+  err = None
+  if request.method=='POST':
+    otp = request.POST['otp']
+    email = request.session['email']
+    
+    otpBackend = OTPBackend()
+    user = otpBackend.authenticate(email=email,otp=otp)
+    print(otp,email,user)
+
+    if user is not None:
+        otpBackend.login(request,user)
+        return redirect("home")
+    else:
+        err = "OTP did not match"
+  context = {"err":err}
+  return render(request,"home/verify.html",context)
+
+
+def signout(request):
+  otpBackend = OTPBackend()
+  otpBackend.logout(request)
+  return redirect("home")

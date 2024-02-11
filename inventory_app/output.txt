@@ -1,8 +1,7 @@
 UserName: Sujal Sawdekar 
  Email: 2021.sujal.sawdekar@ves.ac.in 
- Total Order Items: 4 
+ Total Order Items: 2 
  OrderItems:
-Servo motor=2
-Resistor=1
+RaspberryPi=1
 Ultrasonic sensor=1
-Order Id = 6
+Order Id = 7

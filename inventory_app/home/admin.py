@@ -41,5 +41,6 @@ class OrderAdmin(admin.ModelAdmin):
 
 admin.site.register(Member)
 admin.site.register(Component)
-admin.site.register(Order, OrderAdmin)
+#admin.site.register(Order, OrderAdmin)
+admin.site.register(Order)
 admin.site.register(OrderItem)

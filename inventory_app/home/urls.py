@@ -19,4 +19,7 @@ urlpatterns = [
   path('sensor/', views.getSM, name="getSM"),
   path('electronic-component/', views.getEC, name="getEC"),
   path('component/<cid>', views.getComponent, name="getComponent"),
+  path("signin",views.signin, name="signin"),
+  path("verify",views.verify, name="verify"),
+  path("signout",views.signout, name="signout"),
 ]

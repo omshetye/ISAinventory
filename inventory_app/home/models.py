@@ -1,11 +1,24 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from django.utils import timezone
+import pyotp
 class Member(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True, related_name='member')
     name = models.CharField(max_length=50, null=True)
     email = models.CharField(max_length=50, null=True)
     isMember = models.BooleanField(default=False)
+    otp_secret = models.CharField(max_length=16, blank=True, null=True)
+    otp_created_at = models.DateTimeField(blank=True, null=True)
+
+    def generate_otp(self):
+        self.otp_secret = pyotp.random_base32()
+        self.otp_created_at = timezone.now()
+        return pyotp.totp.TOTP(self.otp_secret).now()
+
+    def check_otp(self, otp,valid_window=30):
+        if self.otp_created_at and self.otp_secret:
+            return pyotp.totp.TOTP(self.otp_secret).verify(otp,valid_window=valid_window)
+        return False
 
     def __str__(self):
         return self.name

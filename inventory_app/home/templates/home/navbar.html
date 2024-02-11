@@ -7,6 +7,12 @@
           <li><a href="#">Categories</a></li>
           <li><a href="home/contact">Contact</a></li>
           <li><a href="home/profile">Profile</a></li>
+          {% if request.user.is_authenticated %}
+          <li><a href="home/profile">Hello {{request.user.member}}</a></li>
+          <li><a href="{% url 'signout' %}">Sign Out</a></li>
+          {% else %}
+          <li><a href="{% url 'signin' %}">SignIn</a></li>
+          {% endif %}
       </ul>
       <a href="{% url 'cart' %}">Cart {{cartItems}}</a>
   </nav>
