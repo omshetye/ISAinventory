@@ -164,6 +164,14 @@ def processOrder(request):
     receipt = receipt + f"Order Id = {order.id}"
     create_text_file(receipt)
     order.save()
+    link = f'http://localhost:8000/orders/{order.id}'
+    send_mail(
+      'Order Approval',
+      f'Order Receipt:\n{receipt}\nApprove Order:\n{link}',
+      member.email,
+      [settings.EMAIL_HOST_USER],
+      fail_silently=False
+    )
   else:
     print('user not logged in...')
   return JsonResponse ('order placed', safe=False)
@@ -171,6 +179,28 @@ def processOrder(request):
 def create_text_file(content, output_path='output.txt'):
     with open(output_path, 'w') as file:
         file.write(content)
+
+def getOrder(request,oid):
+  order = Order.objects.get(id=oid)
+  #orderItem = OrderItem.objects.get(order=order)
+  items = order.orderitem_set.all()
+  if request.method=='POST':
+    orderStatus = request.POST['status']
+    order.approval = orderStatus
+    order.save()
+    send_mail(
+      'Order Approved ',
+      f'Your order {oid} has been Approved',
+      settings.EMAIL_HOST_USER,
+      [order.member.email],
+      fail_silently=False
+    )
+
+  context={'order':order,'items':items}
+  return render(request,"home/approval.html",context)
+
+
+
 
 def signin(request):
   err = None

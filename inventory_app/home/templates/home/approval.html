@@ -1,0 +1,87 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .return-date {
+            font-style: italic;
+        }
+
+        .checkout-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Order details</h1>
+    <p>Order Id: {{order.id}}</p>
+    <p>Member Name: {{order.member.name}}</p>
+    <p>Member Email: {{order.member.email}}</p>
+    <p>Order Complete Status: {{order.complete}}</p>
+    <p>Order Approval Status: {{order.approval}}</p>
+    <h2>Order Summary</h2>
+    <h4>Total Items:{{order.get_cart_items}}</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>Component Image</th>
+                <th>Component</th>
+                <th>Quantity</th>
+                <th>Return Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Component 1 -->
+            {% for item in items %}
+            <tr>
+                <td><img src="/static/images/{{item.component.image}}" alt="" style="width: 100px; height: 100px;"></td>
+                <td>{{item.component.name}}</td>
+                <td>{{item.quantity}}</td>
+                <td class="return-date">2023-01-15</td>
+            </tr>
+            {% endfor %}
+            
+        </tbody>
+    </table>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="orderStatus">Change Order Approval Status:</label>
+
+        <select name="status" id="Orderstatus">
+        <option value="Not Approved">Not Approved</option>
+        <option value="Approved">Approved</option>
+        </select>
+        <button type="submit" class="checkout-btn" id="status">update status</button>
+    </form>
+    
+</body>
+</html>
+{% endblock %}

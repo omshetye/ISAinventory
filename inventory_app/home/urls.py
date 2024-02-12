@@ -22,4 +22,5 @@ urlpatterns = [
   path("signin",views.signin, name="signin"),
   path("verify",views.verify, name="verify"),
   path("signout",views.signout, name="signout"),
+  path("orders/<oid>",views.getOrder, name="getOrder"),
 ]
