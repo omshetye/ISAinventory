@@ -95,7 +95,8 @@ def getEC(request):
   context={'components':component, 'cartItems':cartItems}
   return render(request, 'home/home.html',context)
 
-def cart(request): 
+def cart(request):
+  err = None 
   if request.user.is_authenticated:
     member = request.user.member
     order, created = Order.objects.get_or_create(member=member,complete=False)
@@ -107,25 +108,35 @@ def cart(request):
     cartItems = order['get_cart_items']
 
   #print(items) 
-  context={'items':items,'order':order, 'cartItems':cartItems}
+  context={'items':items,'order':order, 'cartItems':cartItems,'err':err}
   return render(request, 'home/cart.html',context)
 
 def checkout(request):
   if request.user.is_authenticated:
+    err=None
     member = request.user.member
     order, created = Order.objects.get_or_create(member=member,complete=False)
     items = order.orderitem_set.all()
-    cartItems = order.get_cart_items 
+    cartItems = order.get_cart_items
+    for item in items:
+        componentId=item.component.id
+        component=Component.objects.get(id=componentId)
+        if item.quantity>component.stockQunatity:
+           err = f'{component.name} has limited stock.'
+           context={'items':items,'order':order, 'cartItems':cartItems, 'err':err}
+           return render(request, 'home/cart.html',context)
+           
   else:
     items = []
     order = {'get_cart_items':0}
     cartItems = order['get_cart_items']
 
   #print(items) 
-  context={'items':items,'order':order, 'cartItems':cartItems}
+  context={'items':items,'order':order, 'cartItems':cartItems, 'err':err}
   return render(request, 'home/checkout.html',context)
 
 def updateItem(request):
+  err = None
   data = json.loads(request.body)
   componentId = data['component_id']
   action = data['action'] 
@@ -143,6 +154,7 @@ def updateItem(request):
   if orderItem.quantity <= 0:
     orderItem.delete()
   return JsonResponse ('Item was added', safe=False)
+   
 
 def processOrder(request):
   data = json.loads(request.body)
