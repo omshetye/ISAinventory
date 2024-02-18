@@ -1,8 +1,6 @@
-UserName: Sujal2 
- Email: suja7103gm@gmail.com 
- Total Order Items: 4 
+UserName: Om 
+ Email: 2021.om.shetye@ves.ac.in 
+ Total Order Items: 2 
  OrderItems:
-RaspberryPi=1
-Ultrasonic sensor=2
-Capacitor=1
-Order Id = 11
+RaspberryPi=2
+Order Id = 14

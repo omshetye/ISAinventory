@@ -1,0 +1,15 @@
+{% extends 'home/base.html' %}
+{% block title %}Home - ISA Inventory{% endblock %}
+{% block content %}
+
+<h1>Contact Us: </h1>
+<form method="post" action="{% url 'contact' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+
+
+</body>
+</html>
+{%  endblock %}

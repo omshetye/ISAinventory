@@ -1,0 +1,43 @@
+{% extends 'home/base.html' %}
+{% block title %}Home - ISA Inventory{% endblock %}
+{% block content %}
+<section class="profile-info">
+    <h1>User Profile</h1>
+    <div>
+        <p>Username: {{ request.user.username }}</p> <!-- Display the username of the logged-in user -->
+        <p>Email: {{ request.user.email }}</p> <!-- Display the email of the logged-in user -->
+        <!-- You can display additional user information here as needed -->
+    </div>
+
+    <div>
+        <h2>Orders</h2>
+        {% if orders %}
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Order Date</th>
+                    <th>Order Status</th>
+                    <!-- Add more table headers for additional order details -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                    <tr>
+                        <td>{{ order.id }}</td>
+                        <td>{{ order.date_ordered }}</td>
+                        <td>{{ order.approval }}</td> <!-- Assuming 'name' is a field in your Order model -->
+                        <!-- Add more table cells for other order details -->
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No orders found.</p>
+        {% endif %}
+    </div>
+</section>
+
+</body>
+</html>
+{% endblock %}

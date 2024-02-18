@@ -6,6 +6,9 @@ from django.contrib.auth import authenticate, login, logout
 from .backends import OTPBackend
 from django.core.mail import send_mail
 from django.conf import settings
+from django import forms
+from .forms import ContactForm
+
 # Create your views here.
 def mainpage(request):
   if request.user.is_authenticated:
@@ -180,7 +183,7 @@ def create_text_file(content, output_path='output.txt'):
     with open(output_path, 'w') as file:
         file.write(content)
 
-def getOrder(request,oid):
+def getOrder(request, oid):
   order = Order.objects.get(id=oid)
   #orderItem = OrderItem.objects.get(order=order)
   items = order.orderitem_set.all()
@@ -199,8 +202,11 @@ def getOrder(request,oid):
   context={'order':order,'items':items}
   return render(request,"home/approval.html",context)
 
-
-
+def getProfile(request):
+    if request.user.is_authenticated:
+      user = request.user.member
+      orders = Order.objects.filter(member=user)
+      return render(request, 'home/profile.html', {'user': user, 'orders': orders})
 
 def signin(request):
   err = None
@@ -222,12 +228,12 @@ def signin(request):
       except Member.DoesNotExist:
           return HttpResponse("User with provided email does not exist!")
       return redirect("verify")
-  #     user = OTPBackend.authenticate(request, email=email,otp=otp)
-  #     if user is not None:
-  #         login(request,user)
-  #         return redirect("home")
-  #     else:
-  #         err = "Invalid Credentials"
+      user = OTPBackend.authenticate(request, email=email,otp=otp)
+      if user is not None:
+          login(request,user)
+          return redirect("home")
+      else:
+          err = "Invalid Credentials"
   context = {"err":err}
   return render(request,"home/signin.html",context)
 
@@ -254,3 +260,20 @@ def signout(request):
   otpBackend = OTPBackend()
   otpBackend.logout(request)
   return redirect("home")
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('success')  # Create a success page or redirect to home
+    else:
+        form = ContactForm()
+
+    return render(request, 'home/contact.html', {'form': form})
+
+def success(request):
+    return render(request, 'home/success.html')
+def create_text_file(content, output_path='output.txt'):
+    with open(output_path, 'w') as file:
+        file.write(content)

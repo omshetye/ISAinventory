@@ -23,4 +23,7 @@ urlpatterns = [
   path("verify",views.verify, name="verify"),
   path("signout",views.signout, name="signout"),
   path("orders/<oid>",views.getOrder, name="getOrder"),
+  path("profile/", views.getProfile, name="getProfile"),
+  path('contact/', views.contact, name='contact'),
+  path('success/', views.success, name='success'),
 ]
