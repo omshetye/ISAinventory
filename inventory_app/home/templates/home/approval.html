@@ -79,9 +79,13 @@
         <option value="Not Approved">Not Approved</option>
         <option value="Approved">Approved</option>
         </select>
+        <label for="pass">Key: </label>
+        <input type="text" name="key" id="key">
         <button type="submit" class="checkout-btn" id="status">update status</button>
     </form>
-    
+    {% if err %}
+    <h4 style="color: red;">{{err}}</h4>
+    {% endif %}
 </body>
 </html>
 {% endblock %}

@@ -197,10 +197,16 @@ def create_text_file(content, output_path='output.txt'):
 
 def getOrder(request, oid):
   order = Order.objects.get(id=oid)
+  err = None
   #orderItem = OrderItem.objects.get(order=order)
   items = order.orderitem_set.all()
   if request.method=='POST':
     orderStatus = request.POST['status']
+    key = request.POST['key']
+    if key != '12345':
+       err = 'Invalid key!'
+       context={'order':order,'items':items,'err':err}
+       return render(request,"home/approval.html",context)
     order.approval = orderStatus
     order.save()
     send_mail(
@@ -210,8 +216,8 @@ def getOrder(request, oid):
       [order.member.email],
       fail_silently=False
     )
-
-  context={'order':order,'items':items}
+  
+  context={'order':order,'items':items,'err':err}
   return render(request,"home/approval.html",context)
 
 def getProfile(request):
