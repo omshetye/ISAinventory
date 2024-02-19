@@ -203,7 +203,8 @@ def getOrder(request, oid):
   if request.method=='POST':
     orderStatus = request.POST['status']
     key = request.POST['key']
-    if key != '12345':
+    var = GlobalVar.objects.get(variable_name='Key')
+    if key != var.key_value:
        err = 'Invalid key!'
        context={'order':order,'items':items,'err':err}
        return render(request,"home/approval.html",context)
@@ -295,3 +296,13 @@ def success(request):
 def create_text_file(content, output_path='output.txt'):
     with open(output_path, 'w') as file:
         file.write(content)
+
+def getOrders(request):
+   orders = Order.objects.filter(complete=True,approval='Approved')
+   context = {'order':orders}
+   return render(request,'home/orders.html',context)
+
+def getPendingOrders(request):
+   orders = Order.objects.filter(complete=True,approval='not approved')
+   context = {'order':orders}
+   return render(request,'home/orders.html',context)

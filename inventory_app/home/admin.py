@@ -1,15 +1,7 @@
-# from django.contrib import admin
-# from .models import *
-# # Register your models here.
-# admin.site.register(Member)
-# admin.site.register(Component)
-# admin.site.register(Order)
-# admin.site.register(OrderItem)
-
 from django.contrib import admin
 from django.conf import settings
 from django.core.mail import send_mail
-from .models import Member, Component, Order, OrderItem
+from .models import Member, Component, Order, OrderItem, GlobalVar
 
 class OrderItemInline(admin.TabularInline):
     model = OrderItem
@@ -44,3 +36,5 @@ admin.site.register(Component)
 #admin.site.register(Order, OrderAdmin)
 admin.site.register(Order)
 admin.site.register(OrderItem)
+admin.site.register(GlobalVar)
+

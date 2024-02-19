@@ -72,3 +72,9 @@ class ContactMessage(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     message = models.TextField()
+
+class GlobalVar(models.Model):
+    variable_name = models.CharField(max_length=100, unique=True)
+    key_value = models.CharField(max_length=255)
+    def __str__(self):
+        return self.variable_name

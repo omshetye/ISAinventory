@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+</head>
+<body>
+    <h2>Orders</h2>
+    <section>
+        <a href="{% url 'getOrders' %}" style="color: green;">Approved-Orders</a>
+        <a href="{% url 'getPendingOrders' %}" style="color: red;">Approval-Pending-Orders</a>
+    </section>
+    <hr>
+    <table border="2">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Order Date</th>
+                <th>Order Status</th>
+                <th>Order Items</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for o in order %}
+                <tr>
+                    <td>{{ o.id }}</td>
+                    <td>{{ o.date_ordered }}</td>
+                    <td>{{ o.approval }}</td> 
+                    <td><a href="{{o.id}}">See Order Items</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

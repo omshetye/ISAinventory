@@ -1,10 +1,3 @@
-# from django.contrib import admin
-# from django.urls import path, include
-
-# urlpatterns = [
-#     path('admin/', admin.site.urls),
-#     path('', include('home.urls'))
-# ]
 from django.urls import path
 from home import views
 
@@ -23,7 +16,10 @@ urlpatterns = [
   path("verify",views.verify, name="verify"),
   path("signout",views.signout, name="signout"),
   path("orders/<oid>",views.getOrder, name="getOrder"),
+  path("pending-orders/<oid>",views.getOrder, name="getOrder"),
   path("profile/", views.getProfile, name="getProfile"),
   path('contact/', views.contact, name='contact'),
   path('success/', views.success, name='success'),
+  path('orders/', views.getOrders, name='getOrders'),
+  path('pending-orders/', views.getPendingOrders, name='getPendingOrders'),
 ]
