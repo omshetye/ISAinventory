@@ -1,5 +1,5 @@
 {% extends 'home/base.html' %}
-{% block title %}Home - ISA Inventory{% endblock %}
+{% comment %} {% block title %}Home - ISA Inventory{% endblock %}
 {% load static %}
 {% block content %}
 <!DOCTYPE html>
@@ -16,5 +16,107 @@
         <button type="submit" value="submit">generate OTP</button>
     </form>
 </body>
+</html>
+{% endblock %}
+
+
+
+{% extends 'home/base.html' %} {% endcomment %}
+{% block title %}Signin{% endblock %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/mid.css' %}"/>
+<link rel="stylesheet" href="{% static 'css/global.css' %}"/>
+
+    <div class="primary-frame">
+      <main class="home-frames">
+        {% comment %} <div class="home21">
+          <div class="home22">HOME</div>
+        </div> {% endcomment %}
+        <section class="ellipse-separator">
+          <div class="group-login-info">
+            <div class="group-frame2">
+                <img class="letter-send-1-icon1"
+                loading="eager" alt="" src="{% static 'assets/letter-send-3@2x.png' %}">
+              {% comment %} <img
+                class="letter-send-1-icon1"
+                loading="eager"
+                alt src="./assets/letter-send-3@2x.png"
+              /> {% endcomment %}
+            </div>
+            <div class="email-input1"></div>
+            <div class="login-frame1">
+              <div class="login-frame-item"></div>
+              <form class="group-form" action="" method=POST>
+                <div class="frame-child2"></div>
+                <div class="blog-frame3">
+                    <div class="about-frame2">
+                        <b class="login7">LOGIN</b>
+                      </div>
+                  {% comment %} <button class="shop-frame2">
+                    <div class="about-frame2">
+                      <b class="login7">LOGIN</b>
+                    </div>
+                  </button> {% endcomment %}
+                </div>
+                <div class="lettersend-rectangle">
+                  <div class="email-instance1">
+                   
+                    <div class="f-o-r-g-e-t-p-a-s-s-w-o-r-d-te"></div>
+                  </div>
+                </div>
+                <div class="login-group1">
+                  <div class="line-parent">
+                    <div class="line-div"></div>
+                    <div class="component-instance">
+                      <div class="component-21">
+                        <div class="mdiOTP-frame"></div>
+                        {% comment %} <form action="" method=POST> {% endcomment %}
+                          {% csrf_token %}
+                          <input placeholder="ves ID" class="email6" type="email" name="email" id="email">
+                        <!-- <input
+                          class="email6"
+                          placeholder="OTP"
+                          type="text"
+                        /> -->
+                      </div>
+                      <img class="mdiOTP-icon1" alt="" src="{% static 'assets/mdiOTP.svg' %}">
+                      {% comment %} <img
+                        class="mdiOTP-icon1"
+                        alt src=".assets/mdiOTP.svg"
+                      /> {% endcomment %}
+                    </div>
+                  </div>
+                </div>
+                <div class="passwordframe">
+                    <div class="logingroup1">
+                      <div class="emailframe">
+                        <!-- <button class="group-button">
+                          <div class="frame-child3"></div>
+                          <b class="login8">LOGIN</b>
+                        </button> -->
+                        <!-- <div class="frame-child3"></div> -->
+                        <button class="group-button" type="submit" value="submit"><div class="frame-child3"></div><b class="login8">Get OTP</b></button>
+                        {% comment %} </form> {% endcomment %}
+                        <div class="forgetpasswordlink">
+                          <div class="registerbutton">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% comment %} <img
+                  class="letter-send-2-icon1"
+                  loading="eager"
+                  alt src=".assets/letter-send-3@2x.png"
+                /> {% endcomment %}
+              </form>
+            </div>
+            <div class="group-login-info-child"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+   
+  </body>
 </html>
 {% endblock %}

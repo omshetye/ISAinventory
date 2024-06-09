@@ -1,15 +1,175 @@
 {% extends 'home/base.html' %}
-{% block title %}Home - ISA Inventory{% endblock %}
+{% comment %} 
+{% load static %}
 {% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  {% comment %} <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />  {% endcomment %}
+  {% comment %} non comment
+  <title>Contact us</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C600"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500%2C600%2C700"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins%3A400%500%2C600%2C700"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Manrope%3A500"/> {% endcomment %}
+  {% comment %} <link rel="stylesheet" href="css/contactus.css"/> {% endcomment %}
+ {% comment %} <link rel="stylesheet" href="{% static 'contact-us.css' %}"/> 
+  <script src="script.js" defer></script> {% endcomment %}
+</head>
 
-<h1>Contact Us: </h1>
-<form method="post" action="{% url 'contact' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Submit</button>
-</form>
+{% comment %} 
+<link rel="stylesheet" href="{% static 'css/contactus.css' %}"/> {% endcomment %}
+{% comment %} <script src="script.js" defer></script> {% endcomment %}
+{% comment %} <body> 
+<div class="contact-us-NG4">
+  <div class="auto-group-kfqy-tKW">
+    <div class="group-1000001746-QHr">
+      <div class="frame-1-tyi">
+        <p class="contact-information-DWC">Contact Information</p>
+        <p class="say-something-to-start-a-live-chat-jUY">Say something to start a live chat!</p>
+        <div class="auto-group-vebe-qnU">
+          <div class="ellipse-793-ydn">
+          </div>
+          <div class="ellipse-794-HuN">
+          </div>
+          <div class="group-1000001752-D2L">
+            <div class="group-1000001747-vhS">
+              <img class="bxs-phone-call-3n4" src="./assets/bxs-phone-call-MPS.png"/>
+              <p class="xxxxxxxxxxx-N3e">+91 9082534992</p>
+            </div>
+            <div class="group-1000001748-hLp">
+              <img class="ic-sharp-email-E5r" src="./assets/ic-sharp-email-uba.png"/>
+              <a href="mailto:isa.vesit@ves.ac.in" class="isavesitvesacin-Zdv">isa.vesit@ves.ac.in</a>
+            </div>
+            <div class="auto-group-bjb6-WJG">
+              <img class="carbon-location-filled-evG" src="./assets/carbon-location-filled-dCQ.png"/>
+              <p class="vivekanand-education-societies-institute-of-technology-hashu-adwani-memorial-complex-collectors-colony-chembur-mumbai-maharashtra-400074-ySk"> Vivekanand Education Societies Institute of Technology , Hashu Adwani Memorial Complex, Collector&#39;s Colony, Chembur, Mumbai, Maharashtra 400074 </p>
+            </div>
+          </div>
+         
+         
+        </div>
+        
+        </div>
+        
+      <div class="auto-group-h7br-ihA">
+        <form method="post" action="{% url 'contact' %}">
+          {% csrf_token %}
+          <div class="group-1000001762-ZSt">
+            <p class="first-name-uFr">Name</p>
+            <input type="text" name="name" class="textfield12"></input>
+            </div>
+          <div class="group-1000001759-5TA">
+            <p class="email-DpG">Email</p>
+            <input type="email" name="email" class="textfield12"></input>
+            </div>
+          <div class="group-1000001757-Ja8">
+            <p class="message-rbe">Message</p>
+            <textarea rows="8" name="message" class="textfield123"></textarea>
+            </div>
+          <div class="frame-2-4hi">
+            <button type="submit">Send Message</button>
+          </div>
+        </form>
+        </div>
+    </div>
+  </div>
 
-
-</body>
-</html>
-{%  endblock %}
+  </body>
+  {%  endblock %}  {% endcomment %} 
+ 
+ 
+  {% load static %}
+  {% block content %}
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>Contact us</title>
+    <link rel="stylesheet" href="contactpage.css"/>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <link rel="stylesheet" href="{% static 'css/contactus.css' %}"/>
+      <div class="group-1000001764-WZr">
+          <p class="contact-us-FnL">Contact Us</p>
+          <p class="any-question-or-remarks-just-write-us-a-message-nnG">Any question or remarks? Just write us a message!</p>
+        </div>
+  <div class="contact-us-NG4">
+      <div class="auto-group-kfqy-tKW">
+          <div class="group-1000001746-QHr">
+            <div class="frame-1-tyi">
+              <p class="contact-information-DWC">Contact Information</p>
+             
+              <p></p>
+              <div class="auto-group-vebe-qnU">
+                <div class="ellipse-793-ydn">
+                </div>
+                <div class="ellipse-794-HuN">
+                </div>
+                <div class="group-1000001752-D2L">
+                  <div class="group-1000001747-vhS">
+                    <img class="bxs-phone-call-3n4" src="./assets/bxs-phone-call-MPS.png"/>
+                    <p class="xxxxxxxxxxx-N3e">+91 9082534992</p>
+                  </div>
+                  <div class="group-1000001748-hLp">
+                    <img class="ic-sharp-email-E5r" src="./assets/ic-sharp-email-uba.png"/>
+                    <a href="mailto:isa.vesit@ves.ac.in" class="isavesitvesacin-Zdv">isa.vesit@ves.ac.in</a>
+                  </div>
+                  <div class="auto-group-bjb6-WJG">
+                    <img class="carbon-location-filled-evG" src="./assets/carbon-location-filled-dCQ.png"/>
+                    <p class="vivekanand-education-societies-institute-of-technology-hashu-adwani-memorial-complex-collectors-colony-chembur-mumbai-maharashtra-400074-ySk"> Vivekanand Education Societies Institute of Technology , Hashu Adwani Memorial Complex, Collector&#39;s Colony, Chembur, Mumbai, Maharashtra 400074 </p>
+                  </div>
+                </div>
+               
+               
+              </div>
+            </div>
+  
+            <div class="auto-group-h7br-ihA">
+              <form method="post" action="{% url 'contact' %}">
+                  {% csrf_token %}
+              <div class="auto-group-krts-Dtp">
+          
+                <div class="group-1000001762-ZSt">
+                 
+                  <p class="first-name-uFr">First Name</p>
+                  <input type="text" name="name" class="textfield12">
+                </div>
+                <div class="group-1000001761-hBi">
+                </div>
+              </div>
+              <div class="auto-group-475n-wLx">
+                <div class="group-1000001759-5TA">
+                  <p class="email-DpG">Email</p>
+                  <input type="text" name="email" class="textfield12">
+                </div>
+                <div class="group-1000001760-6dA">
+                  <div class="group-1000001763-TCp">
+                  </div>
+                </div>
+              </div>            
+              <div class="group-1000001757-Ja8">
+                <p class="message-rbe">Message</p>
+                <textarea rows="8" name="message" class="textfield123"></textarea>
+              </div>
+              <div class="frame-2-4hi">
+               <button type="submit">Send Message</button>
+              </div>
+          </form>
+  
+            </div>
+          </div>
+          <div class="lettersend-1-H4g">
+          </div>
+        </div>
+   </div>
+  </body>
+  </html>
+  {%  endblock %} 

@@ -1,15 +1,16 @@
 {% extends 'home/base.html' %}
-{% block title %}Home - ISA Inventory{% endblock %}
+{% block title %}User Profile{% endblock %}
 {% block content %}
 <section class="profile-info">
-    <h1>User Profile</h1>
-    <div>
-        <p>Username: {{ request.user.username }}</p> <!-- Display the username of the logged-in user -->
-        <p>Email: {{ request.user.email }}</p> <!-- Display the email of the logged-in user -->
-        <!-- You can display additional user information here as needed -->
+    <div class="profile-details">
+        <h1>User Profile</h1>
+        <div>
+            <p>Username: {{ request.user.username }}</p>
+            <p>Email: {{ request.user.email }}</p>
+        </div>
     </div>
 
-    <div>
+    <div class="order-details">
         <h2>Orders</h2>
         {% if orders %}
         <table border="2">
@@ -26,7 +27,7 @@
                     <tr>
                         <td>{{ order.id }}</td>
                         <td>{{ order.date_ordered }}</td>
-                        <td>{{ order.approval }}</td> <!-- Assuming 'name' is a field in your Order model -->
+                        <td>{{ order.approval }}</td>
                         <!-- Add more table cells for other order details -->
                     </tr>
                 {% endfor %}

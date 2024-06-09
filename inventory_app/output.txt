@@ -1,7 +1,7 @@
-UserName: Sujal2 
- Email: suja7103gm@gmail.com 
- Total Order Items: 2 
+UserName: Om 
+ Email: 2021.om.shetye@ves.ac.in 
+ Total Order Items: 5 
  OrderItems:
-Resistor=1
-Ultrasonic sensor=1
-Order Id = 12
+Ultrasonic sensor=2
+Capacitor=3
+Order Id = 22
